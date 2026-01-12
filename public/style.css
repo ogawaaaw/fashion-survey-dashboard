@@ -1,0 +1,131 @@
+*{ box-sizing:border-box; font-family:"Helvetica Neue", Arial, sans-serif; }
+html{ scroll-behavior:smooth; }
+body{ margin:0; background:#fafafa; color:#111; }
+
+.container{ max-width:520px; margin:72px auto; padding:0 20px 80px; }
+.head{ margin-bottom:28px; }
+h1{ font-size:28px; letter-spacing:.14em; margin:0 0 6px; }
+.subtitle{ font-size:12px; color:#666; margin:0; }
+
+.card{
+  background:#fff;
+  border:1px solid #e5e5e5;
+  padding:24px;
+  margin-bottom:22px;
+}
+
+label{
+  display:block;
+  font-size:12px;
+  letter-spacing:.05em;
+  margin-bottom:18px;
+}
+
+input{
+  width:100%;
+  margin-top:6px;
+  padding:12px;
+  border:1px solid #ccc;
+  font-size:14px;
+  background:#fff;
+}
+input:focus{ outline:none; border-color:#111; }
+
+button{
+  width:100%;
+  padding:14px;
+  border:none;
+  background:#111;
+  color:#fff;
+  font-size:14px;
+  letter-spacing:.1em;
+  cursor:pointer;
+}
+button:hover{ opacity:.88; }
+
+.hint{
+  font-size:11px;
+  color:#777;
+  margin:12px 0 0;
+  letter-spacing:.04em;
+}
+
+.result{ display:none; }
+.result.active{ display:block; }
+
+.grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:14px;
+  margin-bottom:18px;
+}
+.kpi{
+  border:1px solid #eee;
+  padding:14px;
+}
+.kpi .label{
+  font-size:11px;
+  letter-spacing:.12em;
+  color:#666;
+  margin-bottom:6px;
+}
+.kpi .value{
+  font-size:22px;
+  font-weight:700;
+}
+.kpi .sub{
+  font-size:11px;
+  color:#666;
+  margin-top:6px;
+}
+
+.section{
+  margin-top:18px;
+}
+.section .title{
+  font-size:12px;
+  letter-spacing:.1em;
+  color:#111;
+  margin:0 0 10px;
+}
+.rank ol{ margin:10px 0 0 18px; padding:0; }
+.rank li{ margin-bottom:6px; font-size:14px; }
+.rank li.top1 strong{ text-decoration: underline; text-underline-offset: 3px; }
+
+.canvas-wrap{
+  border:1px solid #eee;
+  padding:12px;
+}
+canvas{ width:100% !important; height:auto !important; }
+
+.divider{
+  height:1px;
+  background:#eee;
+  margin:18px 0;
+}
+
+/* ===== アニメーション ===== */
+@keyframes fadeUp{
+  from{ opacity:0; transform:translateY(12px); }
+  to{ opacity:1; transform:translateY(0); }
+}
+.result.active{ animation: fadeUp .55s ease forwards; }
+
+/* ===== スマホ最適化（気持ちいいスクロール） ===== */
+@media (max-width: 480px){
+  body{ background:#fff; }
+  .container{ margin:36px auto; padding:0 16px 90px; }
+  h1{ font-size:24px; line-height:1.25; }
+  .card{ padding:20px; margin-bottom:28px; }
+  label{ font-size:13px; margin-bottom:22px; }
+  input{ padding:14px; font-size:16px; } /* iOSズーム防止 */
+  button{
+    padding:16px;
+    font-size:15px;
+    position:sticky;
+    bottom:14px;
+    z-index:10;
+  }
+  .grid{ grid-template-columns:1fr; }
+  .kpi .value{ font-size:26px; }
+}

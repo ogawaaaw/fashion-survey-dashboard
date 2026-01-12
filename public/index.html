@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ファッションアンケート</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="head">
+      <h1>FASHION SURVEY</h1>
+      <p class="subtitle">Monthly Clothing Expense & Brand Dashboard</p>
+    </header>
+
+    <form id="surveyForm" class="card form-card">
+      <label>
+        1ヶ月あたり服に使う金額（円）
+        <input type="number" name="amount" inputmode="numeric" required placeholder="例）30000" />
+      </label>
+
+      <label>
+        今まで一番お金を使ったブランド（複数OK：カンマ区切り）
+        <input type="text" name="brand" required placeholder="例）COMME des GARÇONS, Yohji Yamamoto" />
+      </label>
+
+      <button type="submit">送信</button>
+      <p class="hint">※ 匿名 / 集計のみ表示</p>
+    </form>
+
+    <section id="result" class="card result" aria-live="polite"></section>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
